@@ -74,10 +74,12 @@
 
     <script>
         function linkAadhaar() {
-            // Simulate linking Aadhaar
-            alert('Linking your Aadhaar details...');
-            // Here you can add your logic to connect to DigiLocker API
-            // After successful linking, redirect or take appropriate action
+            const clientId = 'your_client_id'; // Replace with your actual client ID
+            const redirectUri = 'http://localhost:3000/auth/callback'; // Replace with your actual redirect URI
+            const authUrl = `https://api.digilocker.gov.in/v1/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
+
+            // Redirect to DigiLocker for authentication
+            window.location.href = authUrl;
         }
     </script>
 </body>
