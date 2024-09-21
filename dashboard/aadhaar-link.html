@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password</title>
+    <title>Link Aadhaar Details</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -39,20 +39,10 @@
             color: #333333;
         }
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 30px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-            outline: none;
-        }
-
         button {
             width: 100%;
             padding: 15px;
-            margin: 10px 0;
+            margin-top: 20px;
             font-size: 16px;
             font-weight: 500;
             border-radius: 30px;
@@ -68,51 +58,26 @@
             color: #333333;
         }
 
-        /* Subtle Back Button */
-        .back-button {
-            background-color: #c4c4c4; /* Subtle color */
-            color: #666666;
-            cursor: pointer;
-            margin: 10px 5px 20px 0; /* Right margin for spacing */
-        }
-
-        .back-button:hover {
-            background-color: #a8a8a8;
-        }
-
-        /* Button Group for Back and Submit */
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .button-group button {
-            flex: 1; /* Equal space for both buttons */
-            margin: 0 5px; /* Margin between buttons */
+        .permission-text {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333333;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Forgot Password</h1>
-        
-        <!-- User Inputs -->
-        <input type="text" placeholder="Enter your ID or Email" required>
-        
-        <!-- Button Group for Back and Send Reset Link -->
-        <div class="button-group">
-            <!-- Back Button -->
-            <button class="back-button" onclick="goBack();">Back</button>
-            
-            <!-- Send Reset Link Button -->
-            <button type="submit">Send Reset Link</button>
-        </div>
+        <h1>Link Aadhaar Details</h1>
+        <p class="permission-text">Please link your Aadhaar details from DigiLocker.</p>
+        <button onclick="linkAadhaar()">Link Aadhaar</button>
     </div>
 
     <script>
-        function goBack() {
-            // Always navigate to the login page
-            window.location.href = 'login.html';
+        function linkAadhaar() {
+            // Simulate linking Aadhaar
+            alert('Linking your Aadhaar details...');
+            // Here you can add your logic to connect to DigiLocker API
+            // After successful linking, redirect or take appropriate action
         }
     </script>
 </body>

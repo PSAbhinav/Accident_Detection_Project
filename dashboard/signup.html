@@ -126,7 +126,7 @@
             <button class="back-button" onclick="window.location.href='index.html';">Back</button>
             
             <!-- Sign Up Button -->
-            <button type="submit">Sign Up</button>
+            <button type="submit" id="signUpButton">Sign Up</button>
         </div>
     </div>
 
@@ -135,6 +135,7 @@
         const password = document.getElementById('password');
         const strengthIndicator = document.getElementById('strengthIndicator');
         const strengthBar = document.getElementById('strengthBar');
+        const signUpButton = document.getElementById('signUpButton');
 
         password.addEventListener('input', function () {
             const val = password.value;
@@ -158,6 +159,14 @@
             strengthIndicator.style.color = color;
             strengthBar.style.width = width;
             strengthBar.style.backgroundColor = color;
+        });
+
+        // On sign up button click
+        signUpButton.addEventListener('click', function() {
+            // Add your logic to handle sign up (e.g., form validation, API call)
+
+            // For demonstration, navigate to login page after "signing up"
+            window.location.href = 'login.html';
         });
     </script>
 </body>
