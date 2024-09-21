@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 30px;
+            border: none;
+            color: white;
+            background-color: #66a6ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #89f7fe;
+            color: #333333;
+        }
+
+        /* Subtle Back Button */
+        .back-button {
+            background-color: #c4c4c4; /* Subtle color */
+            color: #666666;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #a8a8a8;
+        }
+
+        /* Positioning the buttons */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-group button {
+            width: 48%;
+        }
+
+        /* Password strength indicator */
+        .strength-indicator {
+            text-align: left;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Strength bar */
+        .strength-bar {
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+            background-color: #e0e0e0; /* Default background */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        
+        <!-- User Inputs -->
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Create ID" required>
+        <input type="password" placeholder="Create Password" required id="password">
+        <input type="password" placeholder="Repeat Password" required>
+        
+        <div class="strength-indicator" id="strengthIndicator">Password strength: </div>
+        <div class="strength-bar" id="strengthBar"></div>
+        
+        <div class="button-group">
+            <!-- Back Button -->
+            <button class="back-button" onclick="window.location.href='index.html';">Back</button>
+            
+            <!-- Sign Up Button -->
+            <button type="submit">Sign Up</button>
+        </div>
+    </div>
+
+    <script>
+        // Simple password strength checker
+        const password = document.getElementById('password');
+        const strengthIndicator = document.getElementById('strengthIndicator');
+        const strengthBar = document.getElementById('strengthBar');
+
+        password.addEventListener('input', function () {
+            const val = password.value;
+            let strength = 'Weak';
+            let width = '0%';
+            let color = 'red';
+
+            if (val.length > 6 && /[A-Z]/.test(val) && /[0-9]/.test(val)) {
+                strength = 'Strong';
+                width = '100%';
+                color = 'green';
+            } else if (val.length > 6) {
+                strength = 'Medium';
+                width = '60%';
+                color = 'orange';
+            } else if (val.length > 0) {
+                width = '30%';
+            }
+
+            strengthIndicator.textContent = `Password strength: ${strength}`;
+            strengthIndicator.style.color = color;
+            strengthBar.style.width = width;
+            strengthBar.style.backgroundColor = color;
+        });
+    </script>
+</body>
+</html>
